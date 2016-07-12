@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import Promise from 'bluebird';
-import * as os from 'os';
+import {EOL} from 'os';
 import {spawn} from 'child_process';
 
 export const WARNING_OUTPUT_MESSAGE = 'Output muted (set appropriate values for starflow_shell__SPAWN_DISPLAY_OUTPUT and starflow_shell__SPAWN_DEPTH_LIMIT)';
@@ -19,7 +19,7 @@ export default function (starflow, config) {
     }
 
     exec(cmd) {
-      starflow.logger.debug('Config variables:' + os.EOL + JSON.stringify(config, null, 2));
+      starflow.logger.debug(`Config variables:${EOL}${JSON.stringify(config, null, 2)}`);
 
       let args, muteErrors, options;
       if (_.size(arguments) === 1 && _.isObject(cmd)) {
@@ -56,7 +56,7 @@ export default function (starflow, config) {
         }
 
         childProcess.on('error', (err) => {
-          starflow.logger.error('Are you sure "' + cmd + '" is a valid command?');
+          starflow.logger.error(`Are you sure "${cmd}" is a valid command?`);
           reject(err);
         });
 

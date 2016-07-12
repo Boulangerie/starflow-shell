@@ -1,4 +1,4 @@
-# starflow-shell
+# starflow-shell [![Build Status](https://travis-ci.org/Boulangerie/starflow-shell.svg?branch=master)](https://travis-ci.org/Boulangerie/starflow-shell)
 
 ## Prerequisites
 
