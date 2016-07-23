@@ -1,6 +1,6 @@
 {
   "name": "starflow-shell",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Starflow plugin that provides executables for shell steps.",
   "main": "index.js",
   "scripts": {
