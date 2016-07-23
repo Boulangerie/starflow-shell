@@ -1,6 +1,6 @@
 {
   "name": "starflow-shell",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Starflow plugin that provides executables for shell steps.",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,14 @@
     }
   ],
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Boulangerie/starflow-shell.git"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "peerDependencies": {
     "starflow": "~0.1.0"
   },
