@@ -6,7 +6,6 @@
   "scripts": {
     "test": "npm run build && mocha --compilers js:babel-core/register",
     "build": "babel src -d lib",
-    "install": "npm run build",
     "version": "npm run build",
     "postversion": "git push && git push --tags"
   },
