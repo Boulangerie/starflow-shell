@@ -31,7 +31,7 @@ In an executable:
 
 ```js
 module.exports = function (starflow) {
-  var spawnFactory = require('starflow-shell').factories.spawn;
+  var spawnFactory = require('starflow-shell')(starflow).factories.spawn;
 
   function MyExecutable() {
     starflow.BaseExecutable.call(this, 'myPlugin.myExecutable');
@@ -76,12 +76,13 @@ var steps = [
 ];
 
 // in an executable
-var spawnFactory = require('starflow-shell').factories.spawn;
+var spawnFactory = require('starflow-shell')(starflow).factories.spawn;
+var spawnExecutable = this.createExecutable(spawnFactory);
 
 // either using an array
-var myTask = new starflow.Task(spawnFactory, ['commandName', 'arg1', 'arg2']);
+var myTask = new starflow.Task(spawnExecutable, ['commandName', 'arg1', 'arg2']);
 // or an object
-var myTask = new starflow.Task(spawnFactory, {
+var myTask = new starflow.Task(spawnExecutable, {
   cmd: 'commandName',
   args: ['arg1', 'arg2']//,
   // muteErrors: true, // if you don't want the errors to break the workflow execution
